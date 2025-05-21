@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive PDF Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pdf-container">
+        <header class="pdf-header">
+            <div class="logo">
+                <img src="logo.png" alt="Company Logo">
+            </div>
+            <div class="header-info">
+                <h1>Responsive PDF Document</h1>
+                <p class="document-number">DOC-2023-001</p>
+                <p class="document-date">Date: <span id="current-date"></span></p>
+            </div>
+        </header>
+
+        <main class="pdf-content">
+            <section class="summary">
+                <h2>Document Summary</h2>
+                <p>This is a fully responsive PDF document created with HTML, CSS, and JavaScript. It adapts to all screen sizes and prints perfectly as a PDF file.</p>
+            </section>
+
+            <section class="details">
+                <h2>Detailed Information</h2>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <h3>Responsive Design</h3>
+                        <p>This document uses CSS media queries to ensure proper display on all devices from mobile phones to desktop computers.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Print Optimization</h3>
+                        <p>Special print styles are included to ensure clean printing and PDF conversion.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Dynamic Content</h3>
+                        <p>JavaScript is used to add dynamic elements like the current date, page numbers, and more.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Accessibility</h3>
+                        <p>The document follows web accessibility guidelines for better usability.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="data-table">
+                <h2>Sample Data Table</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Web Development Service</td>
+                            <td>1</td>
+                            <td>$1,200.00</td>
+                            <td>$1,200.00</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>UI/UX Design</td>
+                            <td>1</td>
+                            <td>$800.00</td>
+                            <td>$800.00</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Responsive PDF Implementation</td>
+                            <td>1</td>
+                            <td>$500.00</td>
+                            <td>$500.00</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" class="text-right">Subtotal</td>
+                            <td>$2,500.00</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="text-right">Tax (10%)</td>
+                            <td>$250.00</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="text-right">Total</td>
+                            <td>$2,750.00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+            <section class="footer-notes">
+                <h2>Additional Notes</h2>
+                <p>Thank you for reviewing this responsive PDF document. For any questions, please contact our support team.</p>
+                <div class="signature-area">
+                    <div class="signature-line"></div>
+                    <p>Authorized Signature</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="pdf-footer">
+            <p class="page-info">Page <span id="page-number">1</span> of <span id="total-pages">1</span></p>
+            <p class="confidential">Confidential Document - Do Not Distribute</p>
+        </footer>
+    </div>
+
+    <div class="print-actions">
+        <button id="print-pdf">Print/Save as PDF</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
