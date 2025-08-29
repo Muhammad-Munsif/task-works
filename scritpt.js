@@ -1,44 +1,47 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Set current date
-    const currentDate = new Date();
-    const dateString = currentDate.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
+document.addEventListener("DOMContentLoaded", function () {
+  // Set current date
+  const currentDate = new Date();
+  const dateString = currentDate.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  document.getElementById("current-date").textContent = dateString;
+
+  // Print PDF functionality
+  document.getElementById("print-pdf").addEventListener("click", function () {
+    window.print();
+  });
+
+  // Calculate and display page numbers
+  function updatePageNumbers() {
+    // In a real implementation, you might use a PDF library or more complex logic
+    // This is a simplified version
+    const totalPages = Math.ceil(
+      document.body.scrollHeight /
+        (window.innerHeight || document.documentElement.clientHeight)
+    );
+    document.getElementById("total-pages").textContent = totalPages;
+
+    // For a multi-page PDF, you would need more complex logic
+    // Consider using libraries like jsPDF or pdf-lib for advanced PDF generation
+  }
+
+  // Initial page number update
+  updatePageNumbers();
+
+  // Update page numbers on resize
+  window.addEventListener("resize", updatePageNumbers);
+
+  // Add page breaks for printing (simplified example)
+  function addPageBreaks() {
+    const pageBreakElements = document.querySelectorAll(".page-break");
+    pageBreakElements.forEach((el) => {
+      el.style.pageBreakAfter = "always";
     });
-    document.getElementById('current-date').textContent = dateString;
+  }
 
-    // Print PDF functionality
-    document.getElementById('print-pdf').addEventListener('click', function() {
-        window.print();
-    });
-
-    // Calculate and display page numbers
-    function updatePageNumbers() {
-        // In a real implementation, you might use a PDF library or more complex logic
-        // This is a simplified version
-        const totalPages = Math.ceil(document.body.scrollHeight / (window.innerHeight || document.documentElement.clientHeight));
-        document.getElementById('total-pages').textContent = totalPages;
-        
-        // For a multi-page PDF, you would need more complex logic
-        // Consider using libraries like jsPDF or pdf-lib for advanced PDF generation
-    }
-
-    // Initial page number update
-    updatePageNumbers();
-
-    // Update page numbers on resize
-    window.addEventListener('resize', updatePageNumbers);
-
-    // Add page breaks for printing (simplified example)
-    function addPageBreaks() {
-        const pageBreakElements = document.querySelectorAll('.page-break');
-        pageBreakElements.forEach(el => {
-            el.style.pageBreakAfter = 'always';
-        });
-    }
-
-    addPageBreaks();
+  addPageBreaks();
 });
 
 // For more advanced PDF generation, you could integrate a library like:
